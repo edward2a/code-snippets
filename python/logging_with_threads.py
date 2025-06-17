@@ -5,10 +5,10 @@ import time
 
 from threading import Thread
 
-format = '%(asctime)s.%(msecs)03dZ %(levelname)s: (%(threadName)s) %(message)s'
+_format = '%(asctime)s.%(msecs)03dZ %(levelname)s: (%(threadName)s) %(message)s'
 date_format = '%Y-%m-%dT%H:%M:%S'
 logging.Formatter.converter = time.gmtime
-logging.basicConfig(level=logging.DEBUG, format=format, datefmt=date_format)
+logging.basicConfig(level=logging.DEBUG, format=_format, datefmt=date_format)
 log = logging.getLogger()
 
 class HelloWorld(Thread):
